@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Yaikob Tesgera - Computer Science Student, Web Developer, Programmer and IT Professional.">
+    <meta name="keywords" content="Computer Science, Web Developer, Programmer, Python, JavaScript, Networking, Jabaa Enterprise, Portfolio">
+    <meta name="author" content="Yaikob Tesgera">
+
+    <title>Yaikob Tesgera | Computer Science Portfolio & Tech Hub</title>
+
+    <link rel="icon" href="assets/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- FUTURISTIC GRADIENT COLOR CLASSES -->
+    <style>
+        .color-cyan { background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 800; }
+        .color-purple { background: linear-gradient(135deg, #b827fc 0%, #2c1654 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 800; }
+        .color-pink { background: linear-gradient(135deg, #ff0844 0%, #ffb199 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 800; }
+        .color-gold { background: linear-gradient(135deg, #f6d365 0%, #fda085 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 800; }
+        .color-emerald { background: linear-gradient(135deg, #0ba360 0%, #3cba92 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 800; }
+        
+        /* LOGO IMAGE STYLING */
+        .logo-img-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+        .logo-avatar {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #00f2fe;
+            box-shadow: 0 0 10px rgba(0, 242, 254, 0.5);
+            transition: transform 0.3s ease;
+        }
+        .logo-img-wrapper:hover .logo-avatar {
+            transform: scale(1.08) rotate(5deg);
+        }
+        .logo-text {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+        }
+        .futuristic-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 14px;
+            border-radius: 20px;
+            background: rgba(0, 242, 254, 0.08);
+            border: 1px solid rgba(0, 242, 254, 0.3);
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- ================= PRELOADER ================= -->
+<div class="preloader">
+    <div class="loader"></div>
+</div>
+
+
+<!-- ================= HEADER ================= -->
+<header class="header">
+
+    <!-- BRANDING LOGO WITH IMAGE -->
+    <a href="index.html" class="logo-img-wrapper">
+        <img src="images/profile.png" alt="Yaikob Tesgera" class="logo-avatar">
+        <span class="logo-text"><span class="color-cyan">YAIKOB</span> <span class="color-purple">TESGERA</span></span>
+    </a>
+
+    <nav class="navbar">
+        <a href="index.html" class="active">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="services.html">Services</a>
+        <!-- JABAA ENTERPRISE INTEGRATION -->
+        <a href="jabaa-company/index.html"><i class="fas fa-building color-gold"></i> <span class="color-gold">Jabaa Enterprise</span></a>
+        <a href="family.html">Family</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+<div class="header-actions">
+    <!-- Theme Dropdown Select -->
+    <div class="theme-select-wrapper">
+        <i class="fas fa-palette theme-icon"></i>
+        <select id="theme-select" aria-label="Select Theme">
+            <option value="dark">🌙 Dark</option>
+            <option value="light">☀️ Light</option>
+            <option value="other">⚡ Cyber / Other</option>
+        </select>
+    </div>
+
+    <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">
+        <i class="fas fa-bars"></i>
+    </button>
+</div>
+</header>
+
+
+<!-- ================= HERO ================= -->
+<main>
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="futuristic-badge">
+            <i class="fas fa-bolt color-gold"></i>
+            <span class="color-cyan">NEXT-GEN DIGITAL ARCHITECT</span>
+        </div>
+
+        <p class="hero-subtitle">
+            Welcome to the Future, I'm
+        </p>
+
+        <h1>
+            <span class="color-cyan">Yaikob</span> <span class="color-purple">Tesgera</span>
+        </h1>
+
+        <h2>
+            I'm a <span id="typing" class="color-pink"></span>
+        </h2>
+
+        <p class="hero-description">
+            <span class="color-emerald">Computer Science</span> specialist passionate about building 
+            <span class="color-cyan">futuristic web applications</span>, high-performance software systems, 
+            <span class="color-purple">secure network infrastructure</span>, and leading innovative solutions through 
+            <span class="color-gold">Jabaa Enterprise</span>.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="projects.html" class="btn primary-btn">
+                View My Work
+                <i class="fas fa-arrow-right"></i>
+            </a>
+
+            <!-- JABAA ENTERPRISE QUICK LINK -->
+            <a href="jabaa-company/index.html" class="btn secondary-btn">
+                <span class="color-gold">Jabaa Enterprise</span>
+                <i class="fas fa-external-link-alt color-gold"></i>
+            </a>
+        </div>
+
+        <div class="social-links">
+            <a href="#" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+
+            <a href="#" aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+
+            <a href="https://t.me/JabaaPioneer" target="_blank" aria-label="Telegram">
+                <i class="fab fa-telegram color-cyan"></i>
+            </a>
+
+            <a href="#" aria-label="Facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+        </div>
+
+    </div>
+
+
+    <div class="hero-image">
+
+        <div class="image-circle">
+            <img src="images/profile.png" alt="Yaikob Tesgera">
+        </div>
+
+        <div class="floating-card card-one">
+            <i class="fas fa-code color-cyan"></i>
+            <span class="color-cyan">Developer</span>
+        </div>
+
+        <div class="floating-card card-two">
+            <i class="fas fa-network-wired color-purple"></i>
+            <span class="color-purple">IT & Network</span>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= STATS ================= -->
+<section class="stats section">
+
+    <div class="stats-grid">
+
+        <div class="stat-card">
+            <i class="fas fa-project-diagram color-cyan"></i>
+            <h3 class="counter color-cyan" data-target="15">0</h3>
+            <p>Projects Completed</p>
+        </div>
+
+        <div class="stat-card">
+            <i class="fas fa-code color-purple"></i>
+            <h3 class="counter color-purple" data-target="10">0</h3>
+            <p>Tech Stack Tools</p>
+        </div>
+
+        <div class="stat-card">
+            <i class="fas fa-certificate color-pink"></i>
+            <h3 class="counter color-pink" data-target="4">0</h3>
+            <p>Certifications</p>
+        </div>
+
+        <div class="stat-card">
+            <i class="fas fa-lightbulb color-gold"></i>
+            <h3 class="counter color-gold" data-target="20">0</h3>
+            <p>Smart Innovations</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ABOUT PREVIEW ================= -->
+<section class="section about-preview">
+
+    <div class="section-title">
+        <p class="color-cyan">WHO I AM</p>
+        <h2>
+            About <span class="color-purple">Me</span>
+        </h2>
+    </div>
+
+    <div class="about-grid">
+
+        <div class="about-image">
+            <img src="images/profile4.jpg" alt="About Yaikob">
+        </div>
+
+        <div class="about-content">
+
+            <h3>
+                <span class="color-cyan">Computer Science</span> Engineer & <span class="color-gold">Tech Innovator</span>
+            </h3>
+
+            <p>
+                I specialize in modern <span class="color-pink">software architecture</span>, full-stack web engineering, 
+                enterprise <span class="color-emerald">networking & security</span>, and scalable database management systems.
+            </p>
+
+            <p>
+                My ultimate mission is to build robust, secure, and scalable high-tech ecosystems that power the future through <span class="color-gold">Jabaa Enterprise</span> and <span class="color-cyan">Jabaa Pioneer</span> media.
+            </p>
+
+            <div class="skills-preview">
+                <span class="color-cyan">HTML5</span>
+                <span class="color-cyan">CSS3</span>
+                <span class="color-gold">JavaScript</span>
+                <span class="color-emerald">Python</span>
+                <span class="color-purple">PHP</span>
+                <span class="color-pink">MySQL</span>
+                <span class="color-cyan">Cisco Networking</span>
+                <span class="color-purple">Git</span>
+            </div>
+
+            <a href="about.html" class="btn primary-btn">
+                More About Me
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SERVICES ================= -->
+<section class="section services-preview">
+
+    <div class="section-title">
+        <p class="color-gold">WHAT I DO</p>
+        <h2>
+            My <span class="color-cyan">Services</span>
+        </h2>
+    </div>
+
+    <div class="services-grid">
+
+        <div class="service-card">
+            <i class="fas fa-laptop-code color-cyan"></i>
+            <h3 class="color-cyan">Web Engineering</h3>
+            <p>
+                Futuristic, fast, and responsive web systems optimized for modern performance.
+            </p>
+        </div>
+
+        <div class="service-card">
+            <i class="fas fa-database color-purple"></i>
+            <h3 class="color-purple">Database Architecture</h3>
+            <p>
+                High-availability database management, security, and integration.
+            </p>
+        </div>
+
+        <div class="service-card">
+            <i class="fas fa-network-wired color-emerald"></i>
+            <h3 class="color-emerald">Enterprise Networking</h3>
+            <p>
+                Cisco switch setup, network security, access control, and troubleshooting.
+            </p>
+        </div>
+
+        <div class="service-card">
+            <i class="fas fa-mobile-screen color-gold"></i>
+            <h3 class="color-gold">Mini-Apps & Mobile UI</h3>
+            <p>
+                Interactive Telegram mini-apps and seamless multi-device interfaces.
+            </p>
+        </div>
+
+    </div>
+
+    <div class="center-btn">
+        <a href="services.html" class="btn secondary-btn">
+            View All Services
+        </a>
+    </div>
+
+</section>
+
+
+<!-- ================= PROJECTS ================= -->
+<section class="section projects-preview">
+
+    <div class="section-title">
+        <p class="color-pink">PORTFOLIO SHOWCASE</p>
+        <h2>
+            Featured <span class="color-gold">Projects</span>
+        </h2>
+    </div>
+
+    <div class="projects-grid">
+
+        <!-- INTEGRATED PROJECT: JABAA ENTERPRISE -->
+        <article class="project-card">
+
+            <img src="images/profile-1.png" alt="Jabaa Enterprise Official Portal">
+
+            <div class="project-content">
+
+                <span class="project-category color-gold">
+                    Enterprise System & Platform
+                </span>
+
+                <h3>
+                    <span class="color-gold">Jabaa Enterprise</span> Official Hub
+                </h3>
+
+                <p>
+                    Corporate ecosystem combining financial trackers, IT solutions, routing algorithms, and Jabaa Pioneer digital content.
+                </p>
+
+                <div class="project-tags">
+                    <span>HTML / CSS</span>
+                    <span>JavaScript</span>
+                    <span>Mini-App API</span>
+                </div>
+
+                <div style="margin-top: 1rem;">
+                    <a href="jabaa-company/index.html" class="btn primary-btn" style="font-size: 0.85rem; padding: 0.5rem 1rem;">
+                        Visit Enterprise <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <article class="project-card">
+
+            <img src="images/profile-2.png" alt="Blood Bank System">
+
+            <div class="project-content">
+
+                <span class="project-category color-cyan">
+                    Healthcare Web System
+                </span>
+
+                <h3>
+                    Jinka Blood Bank Network
+                </h3>
+
+                <p>
+                    Full-featured donor coordination and automated inventory management database system.
+                </p>
+
+                <div class="project-tags">
+                    <span>PHP</span>
+                    <span>MySQL</span>
+                    <span>JavaScript</span>
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <article class="project-card">
+
+            <img src="images/profile-3.png" alt="Network Project">
+
+            <div class="project-content">
+
+                <span class="project-category color-emerald">
+                    Infrastructure & Security
+                </span>
+
+                <h3>
+                    Cisco Network Infrastructure
+                </h3>
+
+                <p>
+                    Enterprise LAN cabling, router port security, and automated network maintenance protocols.
+                </p>
+
+                <div class="project-tags">
+                    <span>Cisco</span>
+                    <span>Networking</span>
+                    <span>Security</span>
+                </div>
+
+            </div>
+
+        </article>
+
+    </div>
+
+    <div class="center-btn">
+        <a href="projects.html" class="btn primary-btn">
+            See All Projects
+        </a>
+    </div>
+
+</section>
+
+
+<!-- ================= CTA ================= -->
+<section class="cta section">
+
+    <div class="cta-content">
+
+        <h2>
+            Have a <span class="color-cyan">Future Project</span> in Mind?
+        </h2>
+
+        <p>
+            Let's collaborate to build scalable, intelligent, and world-class digital solutions.
+        </p>
+
+        <a href="contact.html" class="btn primary-btn">
+            Let's Connect
+            <i class="fas fa-paper-plane"></i>
+        </a>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+
+    <div class="footer-grid">
+
+        <div>
+            <!-- FOOTER BRAND LOGO WITH IMAGE -->
+            <a href="index.html" class="logo-img-wrapper" style="margin-bottom: 1rem;">
+                <img src="images/profile-3.png" alt="Yaikob Tesgera" class="logo-avatar">
+                <span class="logo-text"><span class="color-cyan">YAIKOB</span> <span class="color-purple">TESGERA</span></span>
+            </a>
+
+            <p>
+                Computer Science innovator and IT Specialist engineering high-tech digital systems.
+            </p>
+        </div>
+
+        <div>
+            <h3>Quick Links</h3>
+            <a href="about.html">About</a>
+            <a href="projects.html">Projects</a>
+            <a href="services.html">Services</a>
+            <a href="jabaa-company/index.html"><span class="color-gold">Jabaa Enterprise</span></a>
+            <a href="contact.html">Contact</a>
+        </div>
+
+        <div>
+            <h3>Direct Contact</h3>
+
+            <p>
+                <i class="fas fa-envelope color-cyan"></i>
+                yaikobtesgera0@gmail.com
+            </p>
+
+            <p>
+                <i class="fas fa-phone color-emerald"></i>
+                +251917345202
+            </p>
+
+            <p>
+                <i class="fab fa-telegram color-cyan"></i>
+                @jabaakeessan
+            </p>
+        </div>
+
+    </div>
+
+    <div class="copyright">
+        <p>
+            © <span id="year"></span> <span class="color-cyan">Yaikob Tesgera</span>. All Rights Reserved.
+        </p>
+    </div>
+
+</footer>
+
+
+<button id="back-to-top">
+    <i class="fas fa-arrow-up"></i>
+</button>
+
+
+<script src="js/script.js"></script>
+
+</body>
+</html>
