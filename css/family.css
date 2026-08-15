@@ -1,75 +1,66 @@
 /* ==========================================================================
-   CSS VARIABLES & THEMES
+   Yaikob-Portfolio: Master Responsive Stylesheet
    ========================================================================== */
+
 :root {
-    --bg-main: #0b0f19;
-    --bg-card: #151b2b;
-    --text-main: #f3f4f6;
-    --text-muted: #9ca3af;
-    --color-primary: #ff007f;
-    --color-primary-hover: #e60073;
-    --color-accent: #00f2fe;
+    --bg-primary: #0f172a;
+    --bg-secondary: #1e293b;
+    --bg-card: rgba(30, 41, 59, 0.7);
+    --text-primary: #f8fafc;
+    --text-muted: #94a3b8;
+    --color-accent: #ff007f;
+    --color-accent-hover: #e60073;
     --border-color: rgba(255, 255, 255, 0.1);
-    --shadow-color: rgba(0, 0, 0, 0.5);
-    --transition-speed: 0.3s;
+    --shadow-love: 0 10px 25px -5px rgba(255, 0, 127, 0.2);
 }
 
 [data-theme="light"] {
-    --bg-main: #f8fafc;
-    --bg-card: #ffffff;
-    --text-main: #1e293b;
+    --bg-primary: #f8fafc;
+    --bg-secondary: #ffffff;
+    --bg-card: rgba(255, 255, 255, 0.9);
+    --text-primary: #0f172a;
     --text-muted: #64748b;
-    --color-primary: #e11d48;
-    --color-primary-hover: #be123c;
-    --color-accent: #0284c7;
+    --color-accent: #db2777;
+    --color-accent-hover: #be185d;
     --border-color: rgba(0, 0, 0, 0.1);
-    --shadow-color: rgba(0, 0, 0, 0.08);
+    --shadow-love: 0 10px 25px -5px rgba(219, 39, 119, 0.15);
 }
 
 [data-theme="other"] {
-    --bg-main: #050505;
-    --bg-card: #121212;
-    --text-main: #00ffcc;
-    --text-muted: #888888;
-    --color-primary: #ff0055;
-    --color-primary-hover: #cc0044;
+    --bg-primary: #030712;
+    --bg-secondary: #111827;
+    --bg-card: rgba(17, 24, 39, 0.8);
+    --text-primary: #00ffcc;
+    --text-muted: #9ca3af;
     --color-accent: #00ffcc;
+    --color-accent-hover: #00b399;
     --border-color: rgba(0, 255, 204, 0.2);
-    --shadow-color: rgba(0, 255, 204, 0.15);
+    --shadow-love: 0 10px 25px -5px rgba(0, 255, 204, 0.25);
 }
 
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
 
 body {
-    background-color: var(--bg-main);
-    color: var(--text-main);
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    transition: background-color var(--transition-speed), color var(--transition-speed);
+    overflow-x: hidden;
 }
 
-.container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1.5rem;
-}
-
-/* ==========================================================================
-   HEADER & NAVIGATION
-   ========================================================================== */
+/* Header & Navigation */
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem 5%;
-    background-color: var(--bg-card);
+    background-color: var(--bg-secondary);
     border-bottom: 1px solid var(--border-color);
     position: sticky;
     top: 0;
@@ -77,9 +68,9 @@ body {
 }
 
 .logo {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: bold;
-    color: var(--text-main);
+    color: var(--text-primary);
     text-decoration: none;
     display: flex;
     align-items: center;
@@ -87,25 +78,23 @@ body {
 }
 
 .logo-heart {
-    color: var(--color-primary);
-    animation: heartbeat 1.5s infinite;
+    color: var(--color-accent);
 }
 
 .navbar {
     display: flex;
-    gap: 2rem;
+    gap: 1.5rem;
 }
 
 .navbar a {
-    text-decoration: none;
     color: var(--text-muted);
+    text-decoration: none;
     font-weight: 500;
     transition: color 0.2s ease;
 }
 
-.navbar a:hover,
-.navbar a.active {
-    color: var(--color-primary);
+.navbar a:hover, .navbar a.active {
+    color: var(--color-accent);
 }
 
 .header-actions {
@@ -117,80 +106,178 @@ body {
 .theme-select-wrapper {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    background: var(--bg-main);
-    padding: 0.4rem 0.8rem;
-    border-radius: 20px;
+    gap: 0.4rem;
+    background: var(--bg-card);
+    padding: 0.3rem 0.6rem;
+    border-radius: 8px;
     border: 1px solid var(--border-color);
 }
 
-.theme-icon {
-    color: var(--color-accent);
-}
-
-#theme-select {
+.theme-select-wrapper select {
     background: transparent;
     border: none;
-    color: var(--text-main);
-    font-size: 0.9rem;
+    color: var(--text-primary);
     outline: none;
     cursor: pointer;
+    font-size: 0.9rem;
 }
 
-.menu-toggle {
-    display: none;
-    background: none;
-    border: none;
-    color: var(--text-main);
-    font-size: 1.5rem;
-    cursor: pointer;
+/* Hero & Cards */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
 }
 
-/* ==========================================================================
-   LOGIN SECTION
-   ========================================================================== */
-.family-login-section {
+.family-content {
     flex: 1;
+    padding: 2rem 0;
+}
+
+.family-header-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: var(--shadow-love);
+    backdrop-filter: blur(10px);
+    text-align: center;
+    position: relative;
+}
+
+.love-badge {
+    background: rgba(255, 0, 127, 0.1);
+    color: var(--color-accent);
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+.family-main-title {
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    margin-bottom: 0.5rem;
+    font-weight: 800;
+}
+
+.family-subtitle-en {
+    color: var(--text-muted);
+    font-size: clamp(0.95rem, 2vw, 1.1rem);
+    margin-bottom: 2rem;
+}
+
+/* Couples Info Grid */
+.family-couples-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+@media(min-width: 768px) {
+    .family-couples-info {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.profile-pill {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    max-width: 320px;
+    text-align: left;
+}
+
+.profile-photo-container {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid var(--color-accent);
+    flex-shrink: 0;
+}
+
+.profile-photo-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-details h3 {
+    font-size: 1rem;
+    margin-bottom: 0.2rem;
+}
+
+.role-badge {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.romantic-tag {
+    font-size: 0.8rem;
+    color: var(--color-accent);
+    font-weight: 600;
+}
+
+.heart-divider-pulse {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--color-accent);
+    font-size: 1.2rem;
+    gap: 0.3rem;
+}
+
+.heart-divider-pulse span {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+/* Login Card */
+.family-login-section {
+    min-height: 80vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 3rem 1rem;
+    padding: 1rem;
 }
 
 .login-card {
     background: var(--bg-card);
-    padding: 2.5rem;
-    border-radius: 20px;
-    width: 100%;
-    max-width: 450px;
     border: 1px solid var(--border-color);
-    box-shadow: 0 10px 30px var(--shadow-color);
+    border-radius: 20px;
+    padding: 2.5rem 1.5rem;
+    width: 100%;
+    max-width: 420px;
+    box-shadow: var(--shadow-love);
     text-align: center;
 }
 
-.love-card-glow {
-    box-shadow: 0 0 35px rgba(255, 0, 127, 0.15);
-}
-
 .heart-pulse-icon {
-    font-size: 3rem;
-    color: var(--color-primary);
+    font-size: 2.5rem;
+    color: var(--color-accent);
     margin-bottom: 1rem;
-    animation: heartbeat 1.5s infinite;
 }
 
 .login-card h2 {
-    margin-bottom: 0.5rem;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
+    margin-bottom: 0.3rem;
 }
 
 .love-subtitle-or {
-    color: var(--color-accent);
-    font-size: 0.95rem;
-    margin-bottom: 1.5rem;
-}
-
-.login-prompt-text {
     color: var(--text-muted);
     font-size: 0.9rem;
     margin-bottom: 1.5rem;
@@ -203,480 +290,217 @@ body {
 
 .form-group label {
     display: block;
+    font-size: 0.85rem;
     margin-bottom: 0.4rem;
-    font-size: 0.9rem;
-    color: var(--text-main);
+    color: var(--text-muted);
 }
 
 .form-group input {
     width: 100%;
     padding: 0.75rem 1rem;
-    background: var(--bg-main);
+    background: var(--bg-secondary);
     border: 1px solid var(--border-color);
-    border-radius: 8px;
-    color: var(--text-main);
+    border-radius: 10px;
+    color: var(--text-primary);
     font-size: 1rem;
     outline: none;
-    transition: border-color 0.2s;
 }
 
 .form-group input:focus {
-    border-color: var(--color-primary);
+    border-color: var(--color-accent);
 }
 
+/* Buttons */
 .btn {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
     padding: 0.75rem 1.5rem;
-    border-radius: 8px;
+    border-radius: 10px;
+    font-size: 0.95rem;
     font-weight: 600;
     cursor: pointer;
     border: none;
     text-decoration: none;
-    transition: background 0.2s, transform 0.1s;
-}
-
-.btn:active {
-    transform: scale(0.98);
+    transition: opacity 0.2s ease;
 }
 
 .btn-primary {
-    background-color: var(--color-primary);
-    color: #ffffff;
+    background-color: var(--color-accent);
+    color: #fff;
 }
 
 .btn-primary:hover {
-    background-color: var(--color-primary-hover);
+    background-color: var(--color-accent-hover);
 }
 
 .btn-secondary {
-    background-color: transparent;
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
     border: 1px solid var(--border-color);
-    color: var(--text-main);
-}
-
-.btn-secondary:hover {
-    background-color: var(--border-color);
 }
 
 .btn-block {
     width: 100%;
 }
 
-.btn-love {
-    background: linear-gradient(135deg, #ff007f, #ff5e62);
-}
-
-.btn-love:hover {
-    background: linear-gradient(135deg, #e60073, #e54b50);
-}
-
 .login-error {
-    margin-top: 1rem;
-    font-size: 0.9rem;
-}
-
-/* ==========================================================================
-   FAMILY HERO & PROFILES SECTION
-   ========================================================================== */
-.family-content {
-    flex: 1;
-}
-
-.family-hero {
-    padding: 3rem 0;
-}
-
-.family-header-card {
-    background: var(--bg-card);
-    border-radius: 20px;
-    padding: 3rem 2rem;
-    border: 1px solid var(--border-color);
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-}
-
-.romantic-hero-bg {
-    background: linear-gradient(180deg, var(--bg-card) 0%, rgba(255, 0, 127, 0.05) 100%);
-}
-
-.logout-wrapper {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-}
-
-.lock-btn {
+    color: #ef4444;
     font-size: 0.85rem;
-    padding: 0.5rem 1rem;
+    margin-top: 0.8rem;
 }
 
-.love-badge {
-    display: inline-block;
-    background: rgba(255, 0, 127, 0.1);
-    color: var(--color-primary);
-    padding: 0.4rem 1rem;
-    border-radius: 20px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-    border: 1px solid rgba(255, 0, 127, 0.2);
-}
-
-.family-main-title {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-}
-
-.family-subtitle-en {
-    color: var(--text-muted);
-    font-size: 1.1rem;
-    margin-bottom: 2.5rem;
-}
-
-.family-couples-info {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem;
-    flex-wrap: wrap;
-    margin-top: 2rem;
-}
-
-.profile-pill {
-    background: var(--bg-main);
-    border: 1px solid var(--border-color);
-    padding: 1.2rem;
-    border-radius: 16px;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    text-align: left;
-    min-width: 280px;
-}
-
-.profile-photo-container {
-    width: 65px;
-    height: 65px;
-    border-radius: 50%;
-    overflow: hidden;
-    border: 2px solid var(--color-primary);
-    flex-shrink: 0;
-}
-
-.profile-photo-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.role-badge {
-    color: var(--color-accent);
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    font-weight: 700;
-}
-
-.profile-details h3 {
-    font-size: 1.05rem;
-    margin: 0.2rem 0;
-}
-
-.romantic-tag {
-    font-size: 0.85rem;
-    color: var(--text-muted);
-    font-style: italic;
-}
-
-.heart-divider-pulse {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: var(--color-primary);
-    font-size: 1.5rem;
-    gap: 0.3rem;
-}
-
-.heart-divider-pulse i {
-    animation: heartbeat 1.2s infinite;
-}
-
-.heart-divider-pulse span {
-    font-size: 0.75rem;
-    color: var(--text-muted);
-    font-weight: 600;
-}
-
-/* ==========================================================================
-   FUTURE CHILDREN SECTION
-   ========================================================================== */
-.future-children-section {
-    margin: 3rem auto;
-}
-
-.future-children-card {
-    background: var(--bg-card);
-    border-radius: 20px;
-    padding: 2.5rem;
-    border: 1px solid var(--border-color);
-}
-
-.children-header {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-    margin-bottom: 2rem;
-}
-
-.children-icon {
-    font-size: 2.5rem;
-    color: var(--color-accent);
-}
-
-.children-header h2 {
-    font-size: 1.5rem;
-    margin-bottom: 0.2rem;
-}
-
-.children-header p {
-    color: var(--text-muted);
-    font-size: 0.9rem;
-}
-
-.children-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
-}
-
-.child-card {
-    background: var(--bg-main);
-    border: 1px solid var(--border-color);
-    padding: 1.5rem;
-    border-radius: 14px;
-    display: flex;
-    align-items: flex-start;
-    gap: 1rem;
-}
-
-.child-avatar {
-    width: 50px;
-    height: 50px;
-    background: rgba(0, 242, 254, 0.1);
-    color: var(--color-accent);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.3rem;
-    flex-shrink: 0;
-}
-
-.add-avatar {
-    background: rgba(255, 0, 127, 0.1);
-    color: var(--color-primary);
-}
-
-.child-tag {
-    font-size: 0.75rem;
-    color: var(--color-accent);
-    font-weight: 600;
-}
-
-.child-info h3 {
-    font-size: 1rem;
-    margin: 0.2rem 0;
-    outline: none;
-}
-
-.child-info p {
-    font-size: 0.85rem;
-    color: var(--text-muted);
-    outline: none;
-}
-
-/* ==========================================================================
-   UPLOAD & GALLERY SECTION
-   ========================================================================== */
+/* Upload Section */
 .upload-section {
-    margin: 3rem auto;
+    margin: 2rem auto;
 }
 
 .upload-card {
     background: var(--bg-card);
-    border-radius: 20px;
-    padding: 2.5rem;
     border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 1.5rem;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 2rem;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+@media(min-width: 768px) {
+    .upload-card {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
 }
 
 .upload-title-block {
     display: flex;
     align-items: center;
-    gap: 1.2rem;
+    gap: 1rem;
 }
 
 .upload-title-block i {
-    font-size: 2.5rem;
-    color: var(--color-primary);
+    font-size: 2rem;
+    color: var(--color-accent);
 }
 
 .upload-title-block h3 {
-    font-size: 1.4rem;
-    margin-bottom: 0.2rem;
+    font-size: 1.1rem;
 }
 
 .upload-title-block p {
-    color: var(--text-muted);
-    font-size: 0.9rem;
-}
-
-.upload-actions {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-}
-
-.custom-file-upload {
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.photo-counter {
-    width: 100%;
-    text-align: right;
     font-size: 0.85rem;
     color: var(--text-muted);
 }
 
+.upload-actions {
+    display: flex;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+}
+
+.photo-counter {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    text-align: center;
+}
+
+/* Gallery Grid */
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 1.5rem;
-    margin-bottom: 4rem;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 1rem;
+    padding-bottom: 3rem;
+}
+
+@media(min-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 1.5rem;
+    }
 }
 
 .gallery-item {
-    background: var(--bg-card);
+    background: var(--bg-secondary);
     border-radius: 12px;
     overflow: hidden;
+    aspect-ratio: 1;
     border: 1px solid var(--border-color);
-    aspect-ratio: 1/1;
     cursor: pointer;
-    transition: transform 0.2s, box-shadow 0.2s;
+    transition: transform 0.2s ease;
 }
 
 .gallery-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px var(--shadow-color);
+    transform: scale(1.02);
 }
 
 .gallery-item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: block;
 }
 
-/* ==========================================================================
-   LIGHTBOX MODAL (SWIPE ENABLED)
-   ========================================================================== */
+/* Lightbox Modal */
 .lightbox-modal {
     position: fixed;
-    z-index: 99999;
-    left: 0;
     top: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.95);
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 2000;
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
-    touch-action: pan-y;
-    user-select: none;
+    padding: 1rem;
 }
 
 .lightbox-content {
-    max-width: 85vw;
+    max-width: 100%;
     max-height: 85vh;
-    width: auto;
-    height: auto;
     object-fit: contain;
     border-radius: 8px;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
-    display: block;
-    cursor: grab;
-    transition: transform 0.15s ease-out;
-}
-
-.lightbox-content:active {
-    cursor: grabbing;
+    transition: opacity 0.2s ease;
+    user-select: none;
 }
 
 .lightbox-close-btn {
     position: absolute;
-    top: 20px;
-    right: 30px;
-    color: #ffffff;
-    font-size: 45px;
-    font-weight: bold;
+    top: 1.5rem;
+    right: 2rem;
+    color: #fff;
+    font-size: 2.5rem;
     cursor: pointer;
-    z-index: 100000;
-    transition: color 0.2s ease;
+    z-index: 2010;
 }
 
-.lightbox-close-btn:hover {
-    color: var(--color-primary);
-}
-
-/* ==========================================================================
-   FOOTER
-   ========================================================================== */
+/* Footer */
 .footer {
     text-align: center;
-    padding: 2rem;
-    background-color: var(--bg-card);
+    padding: 1.5rem;
+    background-color: var(--bg-secondary);
     border-top: 1px solid var(--border-color);
     color: var(--text-muted);
-    font-size: 0.9rem;
+    font-size: 0.85rem;
+    margin-top: auto;
 }
 
-/* ==========================================================================
-   KEYFRAMES & RESPONSIVE DESIGN
-   ========================================================================== */
-@keyframes heartbeat {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.15); }
-}
-
-@media (max-width: 768px) {
-    .navbar {
-        display: none; /* Can be hooked with JS mobile toggle if needed */
-    }
-    .family-main-title {
-        font-size: 1.8rem;
-    }
-    .upload-card {
+/* Mobile Nav Adjustments */
+@media(max-width: 600px) {
+    .header {
+        padding: 0.8rem 1rem;
         flex-direction: column;
-        align-items: flex-start;
+        gap: 0.8rem;
     }
-    .photo-counter {
-        text-align: left;
+    .navbar {
+        gap: 1rem;
+        font-size: 0.9rem;
     }
-    .lightbox-content {
-        max-width: 95vw;
-        max-height: 80vh;
-    }
-    .lightbox-close-btn {
-        top: 15px;
-        right: 20px;
-        font-size: 35px;
-    }
+}
+
+.logout-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 1rem;
 }
